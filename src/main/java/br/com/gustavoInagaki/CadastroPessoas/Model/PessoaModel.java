@@ -2,7 +2,7 @@ package br.com.gustavoInagaki.CadastroPessoas.Model;
 
 import jakarta.persistence.*;
 
-//Transforma uma classe em uma entidade do BD
+//Transforma uma classe em uma entidade do banco de dados
 @Entity
 @Table(name = "tb_cadastro")
 public class PessoaModel {
