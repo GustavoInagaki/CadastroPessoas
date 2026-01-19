@@ -1,4 +1,4 @@
-package br.com.gustavoInagaki.CadastroPessoas.Controller;
+package br.com.gustavoInagaki.CadastroPessoas.Pessoas;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

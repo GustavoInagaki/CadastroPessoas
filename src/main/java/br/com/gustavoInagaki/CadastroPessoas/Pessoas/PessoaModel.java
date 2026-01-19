@@ -1,6 +1,8 @@
-package br.com.gustavoInagaki.CadastroPessoas.Model;
+package br.com.gustavoInagaki.CadastroPessoas.Pessoas;
 
+import br.com.gustavoInagaki.CadastroPessoas.Profissao.profissaoModel;
 import jakarta.persistence.*;
+
 
 //Transforma uma classe em uma entidade do banco de dados
 @Entity
@@ -12,16 +14,20 @@ public class PessoaModel {
     private Long id;
     private String nome;
     private int idade;
-    private String profissao;
+    private String email;
+
+    //Unica profissão
+    @ManyToOne
+    @JoinColumn(name = "profissao_id") //chave estrangeira
+    private profissaoModel profissoes;
 
     public PessoaModel(){
-
     }
 
-    public PessoaModel(int idade, String nome, String profissao) {
+    public PessoaModel(int idade, String nome, String email) {
         this.idade = idade;
         this.nome = nome;
-        this.profissao = profissao;
+        this.email = email;
     }
 
     public String getNome() {
@@ -40,11 +46,11 @@ public class PessoaModel {
         this.idade = idade;
     }
 
-    public String getProfissao() {
-        return profissao;
+    public String getEmail() {
+        return email;
     }
 
-    public void setProfissao(String profissao) {
-        this.profissao = profissao;
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
