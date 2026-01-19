@@ -4,11 +4,18 @@ package br.com.gustavoInagaki.CadastroPessoas.Profissao;
 
 import br.com.gustavoInagaki.CadastroPessoas.Pessoas.PessoaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_profissaos")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class profissaoModel {
 
     @Id
@@ -22,28 +29,5 @@ public class profissaoModel {
     private List<PessoaModel> pessoas;
 
 
-    public profissaoModel(){
 
-    }
-
-    public profissaoModel(String nome, int cargaHorariaSemanal) {
-        this.nome = nome;
-        this.cargaHorariaSemanal = cargaHorariaSemanal;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getCargaHorariaSemanal() {
-        return cargaHorariaSemanal;
-    }
-
-    public void setCargaHorariaSemanal(int cargaHorariaSemanal) {
-        this.cargaHorariaSemanal = cargaHorariaSemanal;
-    }
 }
